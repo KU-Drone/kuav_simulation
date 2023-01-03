@@ -1,0 +1,9 @@
+<launch>
+    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
+    <arg name="gui" default="true"/>
+    <include file="$(find kuav_simulation)/launch/zephyr.launch">
+        <arg name="world_name" value="$(arg world_name)"/>
+        <arg name="gui" value="$(arg gui)"/>
+    </include>
+    <include file="$(find kuav_simulation)/launch/start_sitl.launch"/>
+</launch>

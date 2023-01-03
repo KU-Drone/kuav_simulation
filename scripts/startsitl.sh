@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #for directly running the script
 # SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -12,7 +12,7 @@ else
 fi
 
 if [[ "$(basename "$DIR")" != "ArduPlane" ]]; then
-    echo "Not in ArduPlane folder, stopping execution"
+    echo "${DIR} not ArduPlane folder, stopping execution"
     exit 1
 fi
 
