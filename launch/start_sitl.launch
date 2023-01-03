@@ -1,0 +1,4 @@
+<launch>
+    <arg name="path" default="$(find kuav_simulation)/ArduPlane"/>
+    <node name="sitl" pkg="kuav_simulation" type="startsitl.sh" launch-prefix="xterm -e" args=" $(arg path)"/>
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+    <!-- <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/> -->
+    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
+    <arg name="gui" default="true"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_name)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+        <!-- more default parameters can be changed here -->
+    </include>
+    <!-- <node name="spawn_zephyr" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_demo/delta_wing.sdf -model zephyr_delta_wing_ardupilot_demo -unpause" respawn="false"/> -->
+</launch>
