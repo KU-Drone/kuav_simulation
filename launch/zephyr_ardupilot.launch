@@ -1,7 +1,9 @@
 <launch>
     <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
     <arg name="gui" default="true"/>
+    <arg name="upright" default="false"/>
     <include file="$(find kuav_simulation)/launch/zephyr.launch">
+        <arg name="upright" value="$(arg upright)"/>
         <arg name="world_name" value="$(arg world_name)"/>
         <arg name="gui" value="$(arg gui)"/>
     </include>

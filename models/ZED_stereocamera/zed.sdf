@@ -12,14 +12,14 @@
 		  <izz>0.000001</izz>
 	  </inertia>
 	</inertial>
-        <visual>
-          <geometry>
-             <cylinder>
-                <radius>0.007</radius>
-                <length>0.031</length>
-              </cylinder>
-            </geometry>
-        </visual>
+  <visual>
+    <geometry>
+        <cylinder>
+          <radius>0.007</radius>
+          <length>0.031</length>
+        </cylinder>
+      </geometry>
+  </visual>
 
       <sensor name="ZED_cameras" type="multicamera">
         <always_on>1</always_on>
@@ -57,18 +57,19 @@
     	<pose>0 -0.06 0 0 0 0</pose>
     	<inertial>
       	<mass>0.157</mass>
-    	<inertia>
-    		<ixx>0.000012</ixx>
-    		<iyy>0.000406</iyy>
-    		<izz>0.000418</izz>
-    	</inertia>
+        <inertia>
+          <ixx>0.000012</ixx>
+          <iyy>0.000406</iyy>
+          <izz>0.000418</izz>
+        </inertia>
     	</inertial>
 	    <collision name="collision_frame">
         <geometry>
           <box>
-          <size>0.175 0.03 0.033</size>
+            <size>0.175 0.03 0.033</size>
           </box>
         </geometry>
+      </collision>
       <visual name="ZED_Visual">
         <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -81,12 +82,12 @@
     <link name="ZED_right_camera">
       <pose>0 -0.12 0 0 0 0</pose>
     	<inertial>
-	    <mass>0.01</mass>
-	    <inertia>
-		  <ixx>0.000001</ixx>
-		  <iyy>0.000001</iyy>
-		  <izz>0.000001</izz>
-	    </inertia>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000001</ixx>
+          <iyy>0.000001</iyy>
+          <izz>0.000001</izz>
+        </inertia>
 	    </inertial>
         <visual>
            <pose>0 0 0 0 1.57 0</pose>
@@ -95,7 +96,8 @@
                 <radius>0.007</radius>
                 <length>0.031</length>
               </cylinder>
-              </visual>
+            </geometry>
+        </visual>
       </link>
     </model>
 </sdf>

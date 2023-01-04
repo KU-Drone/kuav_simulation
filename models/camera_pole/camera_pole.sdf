@@ -1,0 +1,158 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+    <model name="camera_pole">
+        <link name="camera_pole">
+            <pose>0 0 0.2 0 0 0</pose>
+            <collision name="collision">
+                <geometry>
+                    <cylinder>
+                        <radius>0.01</radius>
+                        <length>0.4</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <cylinder>
+                    <radius>0.02</radius>
+                    <length>0.4</length>
+                </cylinder>
+              </geometry>
+            </visual>
+            <visual name="sphere">
+              <pose>0 0 0.2 0 0 0</pose>
+              <geometry>
+                <sphere>
+                  <radius>0.05</radius>
+                </sphere>
+              </geometry>
+            </visual>
+            <sensor name="fwd_cam" type="camera">
+                <pose>0 0 0.2 0 -1.57079633 0</pose>
+                <camera>
+                  <horizontal_fov>2.0943951</horizontal_fov>
+                  <image>
+                    <width>1280</width>
+                    <height>720</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>1000</far>
+                  </clip>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                  <always_on>true</always_on>
+                  <update_rate>30</update_rate>
+                  <cameraName>fwd_cam</cameraName>
+                  <imageTopicName>fwd_cam</imageTopicName>
+                  <cameraInfoTopicName>fwd_cam_info</cameraInfoTopicName>
+                  <frameName>fwd_cam_link</frameName>
+                </plugin>
+            </sensor>
+            <sensor name="cam_zero" type="camera">
+                <pose>0 0 0.2 0 0 0</pose>
+                <camera>
+                  <horizontal_fov>2.0943951</horizontal_fov>
+                  <image>
+                    <width>1280</width>
+                    <height>720</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>1000</far>
+                  </clip>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                  <always_on>true</always_on>
+                  <update_rate>30</update_rate>
+                  <cameraName>cam_zero</cameraName>
+                  <imageTopicName>cam_zero</imageTopicName>
+                  <cameraInfoTopicName>cam_zero_info</cameraInfoTopicName>
+                  <frameName>cam_zero_link</frameName>
+                </plugin>
+            </sensor>
+            <sensor name="cam_one" type="camera">
+                <pose>0 0 0.2 0 0 1.57079633</pose>
+                <camera>
+                  <horizontal_fov>2.0943951</horizontal_fov>
+                  <image>
+                    <width>1280</width>
+                    <height>720</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>1000</far>
+                  </clip>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                  <always_on>true</always_on>
+                  <update_rate>30</update_rate>
+                  <cameraName>cam_one</cameraName>
+                  <imageTopicName>cam_one</imageTopicName>
+                  <cameraInfoTopicName>cam_one_info</cameraInfoTopicName>
+                  <frameName>cam_one_link</frameName>
+                </plugin>
+            </sensor>
+            <sensor name="cam_two" type="camera">
+                <pose>0 0 0.2 0 0 3.14159265</pose>
+                <camera>
+                  <horizontal_fov>2.0943951</horizontal_fov>
+                  <image>
+                    <width>1280</width>
+                    <height>720</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>1000</far>
+                  </clip>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                  <always_on>true</always_on>
+                  <update_rate>30</update_rate>
+                  <cameraName>cam_two</cameraName>
+                  <imageTopicName>cam_two</imageTopicName>
+                  <cameraInfoTopicName>cam_two_info</cameraInfoTopicName>
+                  <frameName>cam_two_link</frameName>
+                </plugin>
+            </sensor>
+            <sensor name="cam_three" type="camera">
+                <pose>0 0 0.2 0 0 4.71238898</pose>
+                <camera>
+                  <horizontal_fov>2.0943951</horizontal_fov>
+                  <image>
+                    <width>1280</width>
+                    <height>720</height>
+                  </image>
+                  <clip>
+                    <near>0.1</near>
+                    <far>1000</far>
+                  </clip>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>30</update_rate>
+                <visualize>true</visualize>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                  <always_on>true</always_on>
+                  <update_rate>30</update_rate>
+                  <cameraName>cam_three</cameraName>
+                  <imageTopicName>cam_three</imageTopicName>
+                  <cameraInfoTopicName>cam_three_info</cameraInfoTopicName>
+                  <frameName>cam_three_link</frameName>
+                </plugin>
+            </sensor>
+        </link>
+    </model>
+</sdf>
