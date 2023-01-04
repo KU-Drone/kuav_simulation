@@ -1,7 +1,4 @@
-ArduPlane/*
-!ArduPlane/.gitkeep
 devel/
-logs/
 build/
 bin/
 lib/
