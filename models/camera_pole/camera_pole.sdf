@@ -4,10 +4,21 @@
     <model name="camera_pole">
         <link name="camera_pole">
             <pose>0 0 0.2 0 0 0</pose>
+            <inertial>
+              <mass>0.1</mass>
+              <inertia>
+                <ixx>0.0083137104</ixx>
+                <ixy>0</ixy>
+                <iyy>0.0387382402</iyy>
+                <ixz>0</ixz>
+                <iyz>0</iyz>
+                <izz>0.0469845106</izz>
+              </inertia>
+            </inertial>
             <collision name="collision">
                 <geometry>
                     <cylinder>
-                        <radius>0.01</radius>
+                        <radius>0.02</radius>
                         <length>0.4</length>
                     </cylinder>
                 </geometry>
