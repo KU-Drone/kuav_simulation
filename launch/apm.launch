@@ -10,6 +10,8 @@
 	<arg name="respawn_mavros" default="true"/>
 	<arg name="mavros_ns" default="/"/>
 	<arg name="config_yaml" default="$(find mavros)/launch/apm_config.yaml" />
+	<arg name="child_frame_id" default="base_link"/>
+
 
 	<include file="$(find kuav_simulation)/launch/mavros_node.launch">
 		<arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
@@ -21,5 +23,6 @@
 		<arg name="tgt_system" value="$(arg tgt_system)" />
 		<arg name="tgt_component" value="$(arg tgt_component)" />
 		<arg name="log_output" value="$(arg log_output)" />
+		<arg name="child_frame_id" value="$(arg child_frame_id)"/>
 	</include>
 </launch>

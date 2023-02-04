@@ -1,0 +1,79 @@
+<launch>
+    <group ns="fwd_cam/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_zero/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_one/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_two/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_three/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_four/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_five/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_six/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_seven/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_eight/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+    <group ns="cam_nine/raw" >
+        <rosparam param="disable_pub_plugins">
+          - 'image_transport/compressedDepth'
+          - 'image_transport/compressed'
+          - 'image_transport/theora'
+        </rosparam>
+    </group>
+</launch>

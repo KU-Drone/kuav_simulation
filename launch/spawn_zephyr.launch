@@ -1,7 +1,8 @@
 <launch>
     <arg name="upright" default="true"/>
     <arg name="rot" value="$(eval -1.57079633 if upright else 0)"/>
-    
+    <param name="robot_description" textfile="$(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_camera/delta_wing.urdf"/>
+    <include file="$(find kuav_simulation)/launch/disable_image_transport_plugins.launch"/>
     <node name="spawn_zephyr" pkg="gazebo_ros" type="spawn_model" args="
     -sdf 
     -file $(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_camera/delta_wing.sdf 
@@ -9,6 +10,7 @@
     -z 0.2
     -R $(arg rot)
     -unpause" respawn="false"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
     <!-- <node name="spawn_zephyr" pkg="gazebo_ros" type="spawn_model" args="
     -sdf 
     -file $(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_demo/delta_wing.sdf 

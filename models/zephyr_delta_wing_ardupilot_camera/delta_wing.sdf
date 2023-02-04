@@ -163,7 +163,7 @@
     </joint>
     <joint name="camera_pole_joint" type="fixed">
       <parent>zephyr_delta_wing_rudder::wing</parent>
-      <child>camera_pole::camera_pole</child>
+      <child>camera_pole::base_link</child>
     </joint>
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
       <fdm_addr>127.0.0.1</fdm_addr>

@@ -1,6 +1,6 @@
 <launch>
     <arg name="publish_tf" default="true"/>
-    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_battleship.world"/>
+    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
     <arg name="gui" default="true"/>
     <arg name="upright" default="false"/>
     <include file="$(find kuav_simulation)/launch/zephyr_ardupilot.launch">
@@ -8,7 +8,9 @@
         <arg name="gui" value="$(arg gui)"/>
         <arg name="upright" value="$(arg upright)"/>
     </include>
-    <include file="$(find kuav_simulation)/launch/apm.launch"/>
+    <include file="$(find kuav_simulation)/launch/apm.launch">
+        <arg name="child_frame_id" value="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
+    </include>
     <group if="$(arg publish_tf)">
         <node name="mavros_to_tf" pkg="message_to_tf" type="message_to_tf" args="/mavros/global_position/local"/>
     </group>

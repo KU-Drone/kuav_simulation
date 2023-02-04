@@ -1,0 +1,21 @@
+<launch>
+    <arg name="upright" default="true"/>
+    <arg name="distance" default="100"/>
+    <arg name="target_name" default="battleship"/>
+    <arg name="rot" value="$(eval -1.57079633 if upright else 0)"/>
+    <arg name="distance_abs" value="$(eval -1*abs(int(distance)))"/>
+
+    <node name="spawn_target" pkg="gazebo_ros" type="spawn_model" args="
+    -sdf 
+    -file $(find kuav_simulation)/models/$(arg target_name)/model.sdf 
+    -model $(arg target_name)
+    -y $(arg distance_abs)
+    -unpause" respawn="false"/>
+    <!-- <node name="spawn_zephyr" pkg="gazebo_ros" type="spawn_model" args="
+    -sdf 
+    -file $(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_demo/delta_wing.sdf 
+    -model zephyr_delta_wing_demo
+    -z 0.2
+    -R $(arg rot)
+    -unpause" respawn="false"/> -->
+</launch>

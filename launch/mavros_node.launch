@@ -12,6 +12,7 @@
 	<arg name="log_output" default="screen" />
 	<arg name="fcu_protocol" default="v2.0" />
 	<arg name="respawn_mavros" default="false" />
+	<arg name="child_frame_id" default="base_link"/>
 
 	<node pkg="mavros" type="mavros_node" name="mavros" required="$(eval not respawn_mavros)" clear_params="true" output="$(arg log_output)" respawn="$(arg respawn_mavros)" ns="$(arg mavros_ns)">
 		<param name="fcu_url" value="$(arg fcu_url)" />
@@ -19,7 +20,7 @@
 		<param name="target_system_id" value="$(arg tgt_system)" />
 		<param name="target_component_id" value="$(arg tgt_component)" />
 		<param name="fcu_protocol" value="$(arg fcu_protocol)" />
-
+		<param name="global_position/child_frame_id" value="$(arg child_frame_id)"/>
 		<!-- load blacklist, config -->
 		<rosparam command="load" file="$(arg pluginlists_yaml)" />
 		<rosparam command="load" file="$(arg config_yaml)" />

@@ -1,5 +1,5 @@
 <launch>
-    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_battleship.world"/>
+    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
     <arg name="gui" default="true"/>
     <arg name="upright" default="false"/>
     <include file="$(find kuav_simulation)/launch/zephyr.launch">
