@@ -3,15 +3,30 @@
     <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_empty.world"/>
     <arg name="gui" default="true"/>
     <arg name="upright" default="false"/>
+    <arg name="vtol_state_rate" default="40"/>
     <include file="$(find kuav_simulation)/launch/zephyr_ardupilot.launch">
         <arg name="world_name" value="$(arg world_name)"/>
         <arg name="gui" value="$(arg gui)"/>
         <arg name="upright" value="$(arg upright)"/>
+        <arg name="vtol_state_rate" value="$(arg vtol_state_rate)"/>
     </include>
+    
     <include file="$(find kuav_simulation)/launch/apm.launch">
-        <arg name="child_frame_id" value="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
+        <!-- global position args-->
+        <arg name="global_position/frame_id" value="map"/>
+        <arg name="global_position/child_frame_id" value="fcu_frame"/>
+        <arg name="global_position/tf/child_frame_id" value="fcu_frame"/>
+        <arg name="global_position/tf/frame_id" value="map"/>
+        <arg name="global_position/tf/send" value="false"/>
     </include>
     <group if="$(arg publish_tf)">
-        <node name="mavros_to_tf" pkg="message_to_tf" type="message_to_tf" args="/mavros/global_position/local"/>
+        <node name="mavros_global_to_tf" pkg="message_to_tf" type="message_to_tf" args="/mavros/global_position/local"/>
     </group>
+    <include file="$(find kuav_simulation)/launch/publish_vtol_state.launch">
+        <arg name="connection_string" value="udpin:127.0.0.1:14550"/>
+        <arg name="rate" value="40"/>
+        <arg name="publish_tf" value="true"/>
+        <arg name="frame" value="fcu_frame"/>
+        <arg name="child_frame" value="base_link"/>
+    </include>
 </launch>

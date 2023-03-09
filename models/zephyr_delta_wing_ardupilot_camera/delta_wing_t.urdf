@@ -3,28 +3,28 @@
   <joint name="zephyr_delta_wing_ardupilot_camera__camera_mount" type="fixed">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__ZED_stereocamera__link"/>
-    <origin xyz="0      -0.34     0.05423" rpy="0       0      -1.57079"/>
+    <origin xyz="0   -0.34  0.28" rpy="0       0      -1.57079"/>
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__virtual_camera_mount" type="fixed">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__cam_link"/>
-    <origin xyz="0       0      -0.22577" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__skid_pad_joint" type="fixed">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__skid_pad"/>
-    <origin xyz="0      -0.07    -0.24577" rpy="0 0 0"/>
+    <origin xyz="0   -0.07 -0.02" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__camera_pole_joint" type="fixed">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__camera_pole__base_link"/>
-    <origin xyz="0      -0.4     -0.02577" rpy="-1.57079  1.57079  3.14159"/>
+    <origin xyz="0  -0.4  0.2" rpy="-1.57079  1.57079  3.14159"/>
     <axis xyz="0 0 0"/>
     <limit lower="0" upper="0" effort="0" velocity="0"/>
   </joint>
@@ -54,55 +54,41 @@
       </geometry>
     </collision>
   </link>
-  <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__base_link_joint" type="revolute">
-    <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__base_link"/>
-    <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
-    <origin xyz="0      0      0.22577" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="1.57079633" upper="1.57079633" effort="0.0" velocity="0.0"/>
-  </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__zephyr/imu_joint" type="fixed">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__zephyr/imu_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0      0      0.22577" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__propeller_1_joint" type="revolute">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__propeller_1"/>
-    <origin xyz="0.35  -0.32   0.008" rpy="0      1.57079 0"/>
+    <origin xyz="0.35    -0.32     0.23377" rpy="0      1.57079 0"/>
     <axis xyz="0 -1  0"/>
     <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__propeller_2_joint" type="revolute">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__propeller_2"/>
-    <origin xyz="-0.35  -0.32   0.008" rpy="0      1.57079 0"/>
+    <origin xyz="-0.35    -0.32     0.23377" rpy="0      1.57079 0"/>
     <axis xyz="0 1 0"/>
     <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__flap_left_joint" type="revolute">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__flap_left"/>
-    <origin xyz="0.453 0.199 0.007" rpy="0 0 0"/>
+    <origin xyz="0.453   0.199   0.23277" rpy="0 0 0"/>
     <axis xyz="1      0.33032 0"/>
     <limit lower="-0.524" upper="0.524" effort="0.0" velocity="0.0"/>
   </joint>
   <joint name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__flap_right_joint" type="revolute">
     <parent link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing"/>
     <child link="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__flap_right"/>
-    <origin xyz="-0.453  0.199  0.007" rpy="0 0 0"/>
+    <origin xyz="-0.453    0.199    0.23277" rpy="0 0 0"/>
     <axis xyz="1      -0.33032  0"/>
     <limit lower="-0.524" upper="0.524" effort="0.0" velocity="0.0"/>
   </joint>
-  <link name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__base_link">
-    <inertial>
-      <mass value="1e-10"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.00000000001" ixy="0" ixz="0" iyy="0.00000000001" iyz="0" izz="0.00000000001"/>
-    </inertial>
-  </link>
   <link name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing">
     <inertial>
       <mass value="1.5"/>
@@ -110,25 +96,25 @@
       <inertia ixx="0.083137104" ixy="0" ixz="0" iyy="0.387382402" iyz="0" izz="0.469845106"/>
     </inertial>
     <collision name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__body_collision">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0      0      0.22577" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://kuav_simulation/models/zephyr_delta_wing_rudder/meshes/wing.dae OR kuav_simulation/models/zephyr_delta_wing/meshes/wing.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
     <collision name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__right_rudder_collision">
-      <origin xyz="-0.76435  0.33918  0.002" rpy="-0.03  0    0"/>
+      <origin xyz="-0.76435  0.33918  0.22777" rpy="-0.03  0    0"/>
       <geometry>
         <box size=".005 0.12993 .12688"/>
       </geometry>
     </collision>
     <collision name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__left_rudder_collision">
-      <origin xyz="0.76435 0.33918 0.002" rpy="-0.03  0    0"/>
+      <origin xyz="0.76435 0.33918 0.22777" rpy="-0.03  0    0"/>
       <geometry>
         <box size=".005 0.12993 .12688"/>
       </geometry>
     </collision>
     <visual name="zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__visual">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0      0      0.22577" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://kuav_simulation/models/zephyr_delta_wing_rudder/meshes/wing.dae OR kuav_simulation/models/zephyr_delta_wing/meshes/wing.dae" scale="1.0 1.0 1.0"/>
       </geometry>

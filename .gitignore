@@ -50,3 +50,5 @@ qtcreator-*
 CATKIN_IGNORE
 
 /rosbag/**
+
+/datasets

@@ -2,9 +2,10 @@
 <sdf version="1.6">
   <model name="zephyr_delta_wing_rudder">
     <pose>0 0 0.02577 0 0 0</pose>
-
+    
     <!-- this model is -y forward, x-left and z-up -->
     <link name="wing">
+      <pose>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0 -0.12 0 0 0 0</pose>
         <mass>1.5</mass>
@@ -186,6 +187,7 @@
         </ode>
       </physics>
     </joint>
+    
     <link name="propeller_1">
       <!--<pose>0 0.1174 -0.007 0 1.57079 0</pose>-->
       <pose>0.35 -0.32 0.008 0 1.57079 0</pose>
@@ -615,6 +617,5 @@
       <upward>0 -1 0</upward>
       <link_name>propeller_2</link_name>
     </plugin>
-
   </model>
 </sdf>

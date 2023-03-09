@@ -11,6 +11,7 @@
     -R $(arg rot)
     -unpause" respawn="false"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node name="base_link_transform_publisher" pkg="tf" type="static_transform_publisher" args="0 0 0 1.57079633 0 0 base_link zephyr_delta_wing_ardupilot_camera__zephyr_delta_wing_rudder__wing 1" />
     <!-- <node name="spawn_zephyr" pkg="gazebo_ros" type="spawn_model" args="
     -sdf 
     -file $(find kuav_simulation)/models/zephyr_delta_wing_ardupilot_demo/delta_wing.sdf 
