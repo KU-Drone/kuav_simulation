@@ -238,8 +238,8 @@ if __name__ == '__main__':
     target_bb_corners *= (np.array([[2.6714, 0.3910, 0.5807]])*0.9)
     target_bb_corners += np.array([[0,0,0.2]])
 
-    ranges = Ranges(dist_range=my_lin(2, 100, 20, spacing=1.4), elevation_range=np.linspace(0*DEG2RAD, 25*DEG2RAD, 10), azimuth_range=np.linspace(0, 360*DEG2RAD, 20), yaw_range=np.linspace(0, 0, 1), pitch_range=np.linspace(0, 0, 1), roll_range=np.linspace(0, 0, 1))
-    yolo_data_generator = YoloDataGenerator("camera", "target_object", target_bb_corners, ranges, wait_time=5/60)
+    ranges = Ranges(dist_range=my_lin(2, 100, 25, spacing=1.4), elevation_range=np.linspace(0*DEG2RAD, 25*DEG2RAD, 10), azimuth_range=np.linspace(0, 360*DEG2RAD, 25), yaw_range=np.linspace(0, 0, 1), pitch_range=np.linspace(0, 0, 1), roll_range=np.linspace(0, 0, 1))
+    yolo_data_generator = YoloDataGenerator("camera", "target_object", target_bb_corners, ranges, wait_time=5/60, dataset_name="dataset_with_objects")
     rospy.on_shutdown(on_shutdown)
     while not rospy.is_shutdown():
         yolo_data_generator.loop()
