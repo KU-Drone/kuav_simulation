@@ -109,7 +109,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='target_object'>
+    <!-- <model name='target_object'>
       <pose>0 0 0.2 0 -0 0</pose>
       <frame name='battleship::__model__' attached_to='battleship::body'>
         <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
@@ -159,7 +159,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-    </model>
+    </model> 
     <model name='camera'>
       <static>1</static>
       <link name='link'>
@@ -209,7 +209,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-    </model>
+    </model> -->
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>

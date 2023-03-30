@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="three_d_aruco">
+    <link name="link">
+      
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://three_d_aruco/meshes/model.dae</uri>
+            <scale>.5 .5 .5</scale>
+          </mesh>
+        </geometry>
+        <!--<material>
+          <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>-->
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://three_d_aruco/meshes/model.dae</uri>
+            <scale>.5 .5 .5</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

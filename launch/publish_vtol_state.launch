@@ -6,5 +6,4 @@
     <arg name="child_frame" default="base_link"/>
     <arg name="tf_args" value="$(eval f'--publish-tf --child-frame {child_frame} --frame {frame}' if arg('publish_tf') else '')"/>
     <node name="publish_vtol_state" pkg="kuav_simulation" type="publish_vtol_state.py" args="$(arg connection_string) -r $(arg rate) $(arg tf_args)"/>
-
 </launch>

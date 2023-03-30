@@ -1,0 +1,13 @@
+<launch>
+    <arg name="world_name" default="$(find kuav_simulation)/worlds/runway_aruco.world"/>
+    <arg name="gui" default="true"/>
+    <arg name="upright" default="false"/>
+    <arg name="vtol_state_rate" default="40"/>
+    <include file="$(find kuav_simulation)/launch/zephyr.launch">
+        <arg name="upright" value="$(arg upright)"/>
+        <arg name="world_name" value="$(arg world_name)"/>
+        <arg name="gui" value="$(arg gui)"/>
+    </include>
+    <include file="$(find kuav_simulation)/launch/start_sitl.launch"/>
+    <!-- <node name="publish_vtol_state" pkg="kuav_simulation" type="publish_vtol_state.py" args="udpin:127.0.0.1:14550 -r $(arg vtol_state_rate)"/> -->
+</launch>
